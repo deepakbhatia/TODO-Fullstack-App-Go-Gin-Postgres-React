@@ -10,7 +10,7 @@ class Todolist extends React.Component {
   }
 
   removeItem(id) {
-    fetch(`https://go-api-5bDnQ6axgm.bunnyshell.com/item/delete/${id}`).then(
+    fetch(`https://go-api-n4xm3q.bunnyshell.com/item/delete/${id}`).then(
       this.setState({
         items: this.state.items.filter(item => item.id !== id),
       })
@@ -22,7 +22,7 @@ class Todolist extends React.Component {
     let item = items.find(item => item.id === id);
     item.done = !item.done;
 
-    fetch(`https://go-api-5bDnQ6axgm.bunnyshell.com/item/update/${id}/${item.done}`).then(
+    fetch(`https://go-api-n4xm3q.bunnyshell.com/item/update/${id}/${item.done}`).then(
       this.setState({ items })
     );
   }
@@ -52,7 +52,7 @@ class Todolist extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://go-api-5bDnQ6axgm.bunnyshell.com/items")
+    fetch("https://go-api-n4xm3q.bunnyshell.com/items")
       .then(res => res.json())
       .then(json => this.setState({ items: json.items }));
   }
